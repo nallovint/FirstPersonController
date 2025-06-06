@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cglhhdvokqpna"]
+
+[ext_resource type="PackedScene" uid="uid://bbsnnr8obe5d6" path="res://Models/crypt.glb" id="1_x63yu"]
+
+[node name="crypt2" instance=ExtResource("1_x63yu")]

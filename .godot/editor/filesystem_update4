@@ -6,3 +6,4 @@ res://Models/fence_2.tscn
 res://addons/simplegrasstextured/default_mesh.tres
 res://addons/simplegrasstextured/shaders/grass.gdshader
 res://addons/simplegrasstextured/materials/grass.material
+res://zombie.tscn

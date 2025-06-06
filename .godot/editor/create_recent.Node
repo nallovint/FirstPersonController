@@ -1,6 +1,7 @@
+CollisionShape3D
+CharacterBody3D
+StaticBody3D
 SimpleGrassTextured
 CSGSphere3D
-CollisionShape3D
-StaticBody3D
 Node3D
 CSGBox3D

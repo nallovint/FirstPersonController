@@ -11,3 +11,8 @@ res://bullet.gd
 res://zombie_dead_particles.tscn
 res://zombie_dead_particles.gd
 res://Scenes/world.gd
+res://rifle.tscn
+res://Models/steam_rifle.tscn
+res://Scripts/Player.gd
+res://Scenes/bullet_trail.tscn
+res://Scenes/bullet_trail.gd

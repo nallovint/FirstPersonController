@@ -5,6 +5,7 @@ var state_machine
 var health = 6
 
 signal zombie_died
+signal zombie_hit
 
 const SPEED = 4.0
 const ATTACK_RANGE = 2.5
@@ -29,6 +30,7 @@ func _ready():
 	# Connect the timer's timeout signal
 	attack_cooldown_timer.connect("timeout", _on_attack_cooldown_timer_timeout)
 	zombie_died.connect(world_path._on_zombie_died)
+	zombie_hit.connect(world_path._on_enemy_hit)
 	
 func _process(delta):
 	velocity = Vector3.ZERO
@@ -70,6 +72,7 @@ func _on_attack_cooldown_timer_timeout():
 
 func _on_area_3d_body_part_hit(dmg) -> void:
 	health -= dmg
+	emit_signal("zombie_hit")
 	if health <= 0:
 		emit_signal("zombie_died", position)
 		queue_free()

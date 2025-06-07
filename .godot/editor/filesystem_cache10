@@ -1,13 +1,16 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1749318189
-bullet.gd::GDScript::3342306161460251431::1749317529::0::1::::<>Node3D<><>0<>0<><>::
-bullet.tscn::PackedScene::6340088015070358254::1749317897::0::1::::<><><>0<>0<><>::uid://bnvbkab0sxjf8::::res://bullet.gd
+::res://::1749321569
+bullet.gd::GDScript::3342306161460251431::1749320558::0::1::::<>Node3D<><>0<>0<><>::
+bullet.tscn::PackedScene::6340088015070358254::1749321095::0::1::::<><><>0<>0<><>::uid://bnvbkab0sxjf8::::res://bullet.gd
 crypt.tscn::PackedScene/PackedScene::5217120294676802582::1749239173::0::1::::<><><>0<>0<><>::uid://bbsnnr8obe5d6::::res://Models/crypt.glb
 icon.svg::CompressedTexture2D/CompressedTexture2D::8788810445164620394::1749238401::1749238439::1::::<><><>0<>0<>c02e18598516e4795525726172c304d9<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 bodypart.gd::GDScript::2911908656526476287::1749316674::0::1::::<>Area3D<><>0<>0<><>::
-steampunk_rifle.tscn::PackedScene::6050709729314190909::1749317897::0::1::::<><><>0<>0<><>::
-zombie.gd::GDScript::8839720973428149042::1749317419::0::1::::<>CharacterBody3D<><>0<>0<><>::
-zombie.tscn::PackedScene::4707220904630177373::1749318329::0::1::::<><><>0<>0<><>::uid://dx7a6bl6gkyww::::res://zombie.gd<>uid://cq4xhhjbkccye::::res://addons/simplegrasstextured/zombie_mremireh_body__diffuse.png<>uid://dbbsgorfhsmla::::res://addons/simplegrasstextured/zombie_mremireh_body_normal.png<>uid://ctd7th7kdmnyg::::res://addons/simplegrasstextured/zombie_mremireh_shoe_diffuse.png<>uid://bpdeo21m3ufmk::::res://addons/simplegrasstextured/zombie_mremireh_shoe_normal.png<>uid://bhqsye6iyt8ml::::res://bodypart.gd<>uid://c32dwqe7eogdb::::res://Models/Zombie Death.fbx
+rifle.tscn::PackedScene::998631599458372502::1749321569::0::1::::<><><>0<>0<><>::uid://brt226fndrpiw::::res://Models/Assault Rifle West.glb
+zombie_dead_particles.gd::GDScript::1830120820290669894::1749319601::0::1::::<>Node3D<><>0<>0<><>::
+zombie_dead_particles.tscn::PackedScene::1044701454000104146::1749321095::0::1::::<><><>0<>0<><>::uid://1cr273tmfk0e::::res://zombie_dead_particles.gd
+steampunk_rifle.tscn::PackedScene::6050709729314190909::1749321095::0::1::::<><><>0<>0<><>::
+zombie.gd::GDScript::8839720973428149042::1749320526::0::1::::<>CharacterBody3D<><>0<>0<><>::
+zombie.tscn::PackedScene::4707220904630177373::1749321095::0::1::::<><><>0<>0<><>::uid://dx7a6bl6gkyww::::res://zombie.gd<>uid://cq4xhhjbkccye::::res://addons/simplegrasstextured/zombie_mremireh_body__diffuse.png<>uid://dbbsgorfhsmla::::res://addons/simplegrasstextured/zombie_mremireh_body_normal.png<>uid://ctd7th7kdmnyg::::res://addons/simplegrasstextured/zombie_mremireh_shoe_diffuse.png<>uid://bpdeo21m3ufmk::::res://addons/simplegrasstextured/zombie_mremireh_shoe_normal.png<>uid://bhqsye6iyt8ml::::res://bodypart.gd
 ::res://addons/::1749241723
 ::res://addons/simplegrasstextured/::1749296817
 about.gd::GDScript/GDScript::183657310298316461::1749241723::0::1::::<>AcceptDialog<><>0<>1<><>::
@@ -54,11 +57,11 @@ grass.material::ShaderMaterial/ShaderMaterial::8222375467503170076::1749242120::
 grass_unshaded.material::ShaderMaterial/ShaderMaterial::3094928426551161515::1749241723::0::1::::<><><>0<>0<><>::res://addons/simplegrasstextured/shaders/grass_unshaded.gdshader
 icon.material::ShaderMaterial/ShaderMaterial::5612776222323720372::1749241723::0::1::::<><><>0<>0<><>::
 position.material::ShaderMaterial/ShaderMaterial::4894212141296346752::1749241723::0::1::::<><><>0<>0<><>::res://addons/simplegrasstextured/shaders/position.gdshader
-::res://addons/simplegrasstextured/shaders/::1749318189
+::res://addons/simplegrasstextured/shaders/::1749325444
 blur1.gdshader::Shader/Shader::7739247631705787679::1749241724::0::1::::<><><>0<>0<><>::
 blur2.gdshader::Shader/Shader::181123832131977917::1749241724::0::1::::<><><>0<>0<><>::
 distance.gdshader::Shader/Shader::549267717398503332::1749241724::0::1::::<><><>0<>0<><>::
-grass.gdshader::Shader::3006643206166346378::1749318329::0::1::::<><><>0<>0<><>::
+grass.gdshader::Shader::3006643206166346378::1749325444::0::1::::<><><>0<>0<><>::
 grass_unshaded.gdshader::Shader/Shader::2609440221008360920::1749241724::0::1::::<><><>0<>0<><>::
 motion1.gdshader::Shader/Shader::3466713471513093749::1749241724::0::1::::<><><>0<>0<><>::
 motion2.gdshader::Shader/Shader::3582474761328144432::1749241724::0::1::::<><><>0<>0<><>::
@@ -72,7 +75,9 @@ Blue.tres::StandardMaterial3D/StandardMaterial3D::1109378511400077276::174923840
 Green.tres::StandardMaterial3D/StandardMaterial3D::4460615660192160260::1749238401::0::1::::<><><>0<>0<><>::
 Pink.tres::StandardMaterial3D/StandardMaterial3D::3002083277062480744::1749238401::0::1::::<><><>0<>0<><>::
 Red.tres::StandardMaterial3D/StandardMaterial3D::4268741505349743764::1749238401::0::1::::<><><>0<>0<><>::
-::res://Models/::1749318108
+::res://Models/::1749325444
+Assault Rifle West.glb::PackedScene::3620543414650145914::1749320927::1749320927::1::::<><><>0<>0<>5dff787d28b62f4f496a143dc98ca344<>res://.godot/imported/Assault Rifle West.glb-26e9d4d0b53df8742f24a9b26e66e827.scn::
+assault_rifle.glb::PackedScene::8143565128717141433::1749323089::1749323090::1::::<><><>0<>0<>9857b9482d45915cd277ba788ed541cd<>res://.godot/imported/assault_rifle.glb-f9ffd6ab2ae3004d157386bf9109e86d.scn::
 crypt-door.fbx::PackedScene/PackedScene::8878211038247991921::1749239860::1749239861::1::::<><><>0<>0<>d01e665f6236fee80fa8d0dff81d6075<>res://.godot/imported/crypt-door.fbx-b15827b5bb6f85488c0011df6a509fff.scn::
 crypt-door.glb::PackedScene/PackedScene::5943616270349788167::1749239064::1749239065::1::::<><><>0<>0<>c5adfa37ee256fc9fce8f2d0121ad187<>res://.godot/imported/crypt-door.glb-e368ff35be1f1ba7b9302e578289b77d.scn::
 crypt-large-roof.glb::PackedScene/PackedScene::8711499736281180441::1749239064::1749239066::1::::<><><>0<>0<>12f7460eea85a1d23e94245e13da7af0<>res://.godot/imported/crypt-large-roof.glb-82e2e0467d4b148bc952e77fc5758ea4.scn::
@@ -82,15 +87,36 @@ crypt-small-entrance.glb::PackedScene/PackedScene::9121266497360472117::17492390
 crypt-small-roof.glb::PackedScene/PackedScene::7076076870812828774::1749239064::1749239066::1::::<><><>0<>0<>13d31d68250c0f38a5e865d8cb0a0b43<>res://.godot/imported/crypt-small-roof.glb-a691bb9e5cf2d76822fb6cc9b9114cf6.scn::
 crypt-small.glb::PackedScene/PackedScene::7133875566060951955::1749239064::1749239066::1::::<><><>0<>0<>92e30f8715439dc7a32d43f2212d1bf6<>res://.godot/imported/crypt-small.glb-f347cb5a8ea0fdb41c0ef74473265518.scn::
 crypt.glb::PackedScene/PackedScene::2494581807644059565::1749239064::1749239066::1::::<><><>0<>0<>40da7a54fdd54ee58c67322602a59c16<>res://.godot/imported/crypt.glb-d27eae56cd99f15b84167fa239c8ac57.scn::
-crypt.tscn::PackedScene::5281798309987574211::1749317896::0::1::::<><><>0<>0<><>::
-fence_2.tscn::PackedScene::7944743077020874711::1749317896::0::1::::<><><>0<>0<><>::
+crypt.tscn::PackedScene::5281798309987574211::1749321095::0::1::::<><><>0<>0<><>::
+fence_2.tscn::PackedScene::7944743077020874711::1749321095::0::1::::<><><>0<>0<><>::
 iron-fence.glb::PackedScene/PackedScene::7429596900635408229::1749240600::1749240600::1::::<><><>0<>0<>750c8e7711931da37dee9a9deca8680f<>res://.godot/imported/iron-fence.glb-5f5933ed71545a299a59f9e7442b8b42.scn::
+steam_rifle.tscn::PackedScene::7663781466828556600::1749325444::0::1::::<><><>0<>0<><>::uid://dvao3k3fkmbxw::::res://Models/muzzle_flashs/m_5.png
 road.glb::PackedScene/PackedScene::3941779303621195608::1749240088::1749240089::1::::<><><>0<>0<>bb7754e505d140e3c4592e0a5b1ea356<>res://.godot/imported/road.glb-3cc5c456eadce9f92dda0db400cbf0d1.scn::
 road.tscn::PackedScene/PackedScene::7343784529226631385::1749240995::0::1::::<><><>0<>0<><>::uid://bwfor813nx2oi::::res://Models/road.glb
 Steampunk Rifle.glb::PackedScene/PackedScene::3921815555651646371::1749304559::1749304560::1::::<><><>0<>0<>69d36af83680f76c476a61336be6631b<>res://.godot/imported/Steampunk Rifle.glb-2ee2686a6ed218aa55ccc0c701cb6502.scn::
+steampunk_rifle.glb::PackedScene::1067167497605737166::1749323373::1749323375::1::::<><><>0<>0<>2ee5afb2c5b1a1e32d7a75d0f6d9a702<>res://.godot/imported/steampunk_rifle.glb-d4694159b4b8cbe6c2097e69105cbd48.scn::
 Zombie Death.fbx::AnimationLibrary::6794089475067586095::1749318094::1749318445::1::::<><><>0<>0<>4d2b1b088ad1e8b4b14fc4447e0d4d7f<>res://.godot/imported/Zombie Death.fbx-071efc59c16f542d5b2b5f67fc29e4d6.res::
-::res://Scenes/::1749317896
-world.gd::GDScript::6802755371112794332::1749303630::0::1::::<>Node3D<><>0<>0<><>::
-World.tscn::PackedScene::7285665154832654338::1749317896::0::1::::<><><>0<>0<><>::uid://d1s13ybge20ij::::res://Scripts/Player.gd<>uid://c36knfpj4xjge::::res://Scenes/world.gd<>uid://3wbpwnk3ylo1::::res://Materials/696.jpg<>uid://dcvnb8lxu0kh2::::res://Models/road.tscn<>uid://chispgewebm5p::::res://Models/crypt.tscn<>uid://bi3o8elbtqoni::::res://addons/simplegrasstextured/shaders/grass.gdshader<>uid://dlgq007dj4co2::::res://Models/fence_2.tscn<>uid://c4ggdp0kg5wjk::::res://addons/simplegrasstextured/textures/grassbushcc008.png<>uid://cshakm3philht::::res://steampunk_rifle.tscn<>uid://2juaclm8gc1n::::res://addons/simplegrasstextured/grass.gd<>uid://b8chigdgttrgf::::res://zombie.tscn
-::res://Scripts/::1749306012
-Player.gd::GDScript::9022960691666742421::1749306012::0::1::::<>CharacterBody3D<><>0<>0<><>::
+::res://Models/muzzle_flashs/::1749325491
+crosshair161.png::CompressedTexture2D::2346365015613778473::1749324859::1749324859::1::::<><><>0<>0<>84b1853f9db46ddb99a52c5b20ecda27<>res://.godot/imported/crosshair161.png-88b56ba0e3b4337c369f898f76438b75.ctex::
+crosshair162.png::CompressedTexture2D::4128072723841027391::1749325491::1749325492::1::::<><><>0<>0<>f5aafde1f6765062d0a9664e4e1baa27<>res://.godot/imported/crosshair162.png-5f1393da57fdad0551102311f7426f93.ctex::
+m_1.png::CompressedTexture2D::113335237719531194::1749321732::1749321746::1::::<><><>0<>0<>ccaf837b302dafe91f6a77ac854b46a1<>res://.godot/imported/m_1.png-8b91bde69c2df7fc47c0daf896bfe8a9.ctex::
+m_2.png::CompressedTexture2D::1180245375111720324::1749321732::1749321746::1::::<><><>0<>0<>bf0538f09652844acdb6bbfec9160357<>res://.godot/imported/m_2.png-7d727d71ccfe525d019fe57f89046bd9.ctex::
+m_3.png::CompressedTexture2D::5869949298940513023::1749321732::1749321746::1::::<><><>0<>0<>93a2d58579208b7215d1519dc79ed1f4<>res://.godot/imported/m_3.png-c78adff09b06ef8db961627eb6f35cc7.ctex::
+m_4.png::CompressedTexture2D::1141365913530499146::1749321732::1749321746::1::::<><><>0<>0<>1295984fbaa16fd7b1adb772c9135df5<>res://.godot/imported/m_4.png-b26ba0791652f28c2703c44b795a37e9.ctex::
+m_5.png::CompressedTexture2D::8634128376335089992::1749321732::1749321779::1::::<><><>0<>0<>0cb4be5582585d3d5ff13f66f0fb095c<>res://.godot/imported/m_5.png-589240623221a8fc54db41188478f82b.s3tc.ctex::
+m_6.png::CompressedTexture2D::4605590544179494767::1749321732::1749321746::1::::<><><>0<>0<>88338f010ff9bd021e503c3ab18950e8<>res://.godot/imported/m_6.png-7b80a5bca0d59cd1d8c518c93855ad9c.ctex::
+m_7.png::CompressedTexture2D::5077632306943188219::1749321732::1749321746::1::::<><><>0<>0<>ad17c26ad54c769f787198b3da072be7<>res://.godot/imported/m_7.png-5b2cf94268bf054494c225d80ab0f8e2.ctex::
+m_8.png::CompressedTexture2D::8861122061355515532::1749321732::1749321746::1::::<><><>0<>0<>cf49700da39544ef79e1edd06dcb2d5f<>res://.godot/imported/m_8.png-0493b1eb7647e79315b752a34d9cdf6a.ctex::
+m_9.png::CompressedTexture2D::371703455874086788::1749321732::1749321746::1::::<><><>0<>0<>575f975383211a18f5942c40847d9d0b<>res://.godot/imported/m_9.png-497431ebcf125a0e6d8faa0f6183bec0.ctex::
+m_10.png::CompressedTexture2D::283246119347148299::1749321732::1749321746::1::::<><><>0<>0<>7522dab331ab4a71dd4f520feed56f5e<>res://.godot/imported/m_10.png-bc818641594a0d3ecb734eb09049f82a.ctex::
+m_11.png::CompressedTexture2D::4097182830895692048::1749321732::1749321746::1::::<><><>0<>0<>db394c7a8995dee4d22469a884fbf60c<>res://.godot/imported/m_11.png-5407e4b085b847316188a5e3ffd68f84.ctex::
+m_12.png::CompressedTexture2D::8294164750564818092::1749321732::1749321746::1::::<><><>0<>0<>3ceb93c4845fc94dbf242615ec9b7a3f<>res://.godot/imported/m_12.png-75c7d9b6e7c1e60dfdfb41446253f662.ctex::
+m_13.png::CompressedTexture2D::2324671660160702483::1749321732::1749321746::1::::<><><>0<>0<>0a56dd2b4d55d9b474620da661e52082<>res://.godot/imported/m_13.png-c4d56ccc1c0ee18068f7cbf9354529ce.ctex::
+m_14.png::CompressedTexture2D::539990906804587631::1749321732::1749321746::1::::<><><>0<>0<>37beab4b9b7a1617f6936abd1bae9576<>res://.godot/imported/m_14.png-bbae4988db63d97976c7a6ae65d8a6ea.ctex::
+m_15.png::CompressedTexture2D::8984522276647239527::1749321732::1749321746::1::::<><><>0<>0<>b7cdd6f9c2f866072bdf305c3772fc9d<>res://.godot/imported/m_15.png-1a0caf3c2978ed3ba993d907b734b778.ctex::
+m_16.png::CompressedTexture2D::1668219596466662601::1749321732::1749321746::1::::<><><>0<>0<>18962c57450944c9ff36970ef6d6bb00<>res://.godot/imported/m_16.png-d23848c0417239642834a5fa6636275e.ctex::
+::res://Scenes/::1749325444
+world.gd::GDScript::6802755371112794332::1749325269::0::1::::<>Node3D<><>0<>0<><>::
+World.tscn::PackedScene::7285665154832654338::1749325444::0::1::::<><><>0<>0<><>::uid://d1s13ybge20ij::::res://Scripts/Player.gd<>uid://c36knfpj4xjge::::res://Scenes/world.gd<>uid://3wbpwnk3ylo1::::res://Materials/696.jpg<>uid://dcvnb8lxu0kh2::::res://Models/road.tscn<>uid://chispgewebm5p::::res://Models/crypt.tscn<>uid://bi3o8elbtqoni::::res://addons/simplegrasstextured/shaders/grass.gdshader<>uid://dlgq007dj4co2::::res://Models/fence_2.tscn<>uid://c4ggdp0kg5wjk::::res://addons/simplegrasstextured/textures/grassbushcc008.png<>uid://cshakm3philht::::res://steampunk_rifle.tscn<>uid://2juaclm8gc1n::::res://addons/simplegrasstextured/grass.gd<>uid://dhgnmjnl0a8lo::::res://Models/steam_rifle.tscn<>uid://b8chigdgttrgf::::res://zombie.tscn<>uid://8ouj3c2xmt2x::::res://Models/muzzle_flashs/crosshair161.png
+::res://Scripts/::1749324687
+Player.gd::GDScript::9022960691666742421::1749324687::0::1::::<>CharacterBody3D<><>0<>0<><>::

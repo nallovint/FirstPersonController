@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://nt5nngwiu0qu"]
+
+[ext_resource type="Script" uid="uid://dl8hhecx06cnn" path="res://Scenes/bullet_trail.gd" id="1_uegyu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uegyu"]
+transparency = 1
+albedo_color = Color(0.984407, 0.662728, 0, 1)
+
+[node name="BulletTrail" type="MeshInstance3D"]
+material_override = SubResource("StandardMaterial3D_uegyu")
+script = ExtResource("1_uegyu")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -22,12 +22,17 @@ signal player_hit
 var gravity = 9.8
 
 var bullet = load("res://bullet.tscn")
+var bullet_trace = load("res://Scenes/bullet_trail.tscn")
 var instance
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
 @onready var gun_anim = $"Head/Camera3D/Steampunk Rifle/AnimationPlayer"
+@onready var auto_anim = $"Head/Camera3D/SP Assault Rifle/AnimationPlayer"
 @onready var gun_barrel = $"Head/Camera3D/Steampunk Rifle/RayCast3D"
+@onready var aim_ray = $Head/Camera3D/AimRay
+@onready var aim_ray_end = $Head/Camera3D/AimRayEnd
+@onready var auto_barrel: Node3D = $"Head/Camera3D/SP Assault Rifle/Sketchfab_model/root/GLTF_SceneRootNode/Barrel"
 
 
 func _ready():
@@ -80,12 +85,7 @@ func _physics_process(delta):
 	camera.fov = lerp(camera.fov, target_fov, delta * 8.0)
 	
 	if Input.is_action_pressed("shoot"):
-		if !gun_anim.is_playing():
-			gun_anim.play("shoot")
-			instance = bullet.instantiate()
-			instance.transform = gun_barrel.global_transform
-			#instance.transform_basis = gun_barrel.global_transform.basis
-			get_parent().add_child(instance)
+		_shoot_auto()
 	
 	move_and_slide()
 
@@ -99,3 +99,23 @@ func _headbob(time) -> Vector3:
 func hit(dir):
 	emit_signal("player_hit")
 	velocity += dir * HIT_STAGGER
+
+func _shoot_pistols():
+	if !gun_anim.is_playing():
+		gun_anim.play("shoot")
+		instance = bullet.instantiate()
+		instance.transform = gun_barrel.global_transform
+		#instance.transform_basis = gun_barrel.global_transform.basis
+		get_parent().add_child(instance)
+
+func _shoot_auto():
+	if !auto_anim.is_playing():
+		auto_anim.play("shoot")
+		instance = bullet_trace.instantiate()
+		if aim_ray.is_colliding():
+			instance.init(auto_barrel.global_position, aim_ray.get_collision_point())
+			if aim_ray.get_collider().is_in_group("enemy"):
+				aim_ray.get_collider().hit()
+		else:
+			instance.init(auto_barrel.global_position, aim_ray_end.global_position)
+		get_parent().add_child(instance)

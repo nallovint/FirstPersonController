@@ -272,32 +272,6 @@ transform = Transform3D(-0.999997, 4.26855e-05, -0.00236256, 3.99409e-05, 0.9999
 [node name="road34" parent="Roads" instance=ExtResource("3_p70al")]
 transform = Transform3D(-0.999997, 4.26855e-05, -0.00236256, 3.99409e-05, 0.999999, 0.00116695, 0.0023626, 0.00116686, -0.999997, -17.6552, 0.000999451, -1.67121)
 
-[node name="Spawns" type="Node3D" parent="."]
-
-[node name="Spawn" type="Node3D" parent="Spawns"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.8253, 1.90735e-06, -22.1906)
-
-[node name="Spawn2" type="Node3D" parent="Spawns"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5129, 0, -23.487)
-
-[node name="Spawn3" type="Node3D" parent="Spawns"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.3607, 0, -1.47363)
-
-[node name="Spawn4" type="Node3D" parent="Spawns"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.09, 0, 16.5124)
-
-[node name="Spawn5" type="Node3D" parent="Spawns"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.912, 1.90735e-06, 23.9242)
-
-[node name="Spawn6" type="Node3D" parent="Spawns"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.6132, -1.90735e-06, 20.9304)
-
-[node name="Spawn7" type="Node3D" parent="Spawns"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.3802, 0, -5.83488)
-
-[node name="Spawn8" type="Node3D" parent="Spawns"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.7251, -1.90735e-06, 5.73175)
-
 [node name="zombies" type="Node3D" parent="."]
 
 [node name="zombie" parent="zombies" instance=ExtResource("9_uo7di")]
@@ -330,8 +304,4 @@ offset_right = 1360.0
 offset_bottom = 888.0
 color = Color(1, 0, 0, 0.305882)
 
-[node name="Timer" type="Timer" parent="."]
-autostart = true
-
 [connection signal="player_hit" from="Player" to="." method="_on_player_player_hit"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

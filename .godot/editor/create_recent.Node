@@ -1,7 +1,13 @@
+Timer
+Node3D
+ColorRect
+Control
+AnimationTree
+NavigationRegion3D
+NavigationAgent3D
 CollisionShape3D
 CharacterBody3D
 StaticBody3D
 SimpleGrassTextured
 CSGSphere3D
-Node3D
 CSGBox3D

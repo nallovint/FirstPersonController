@@ -21,8 +21,13 @@ signal player_hit
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = 9.8
 
+var bullet = load("res://bullet.tscn")
+var instance
+
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
+@onready var gun_anim = $"Head/Camera3D/Steampunk Rifle/AnimationPlayer"
+@onready var gun_barrel = $"Head/Camera3D/Steampunk Rifle/RayCast3D"
 
 
 func _ready():
@@ -73,6 +78,14 @@ func _physics_process(delta):
 	var velocity_clamped = clamp(velocity.length(), 0.5, SPRINT_SPEED * 2)
 	var target_fov = BASE_FOV + FOV_CHANGE * velocity_clamped
 	camera.fov = lerp(camera.fov, target_fov, delta * 8.0)
+	
+	if Input.is_action_pressed("shoot"):
+		if !gun_anim.is_playing():
+			gun_anim.play("shoot")
+			instance = bullet.instantiate()
+			instance.transform = gun_barrel.global_transform
+			#instance.transform_basis = gun_barrel.global_transform.basis
+			get_parent().add_child(instance)
 	
 	move_and_slide()
 

@@ -1,8 +1,13 @@
 res://zombie.tscn
 res://addons/simplegrasstextured/shaders/grass.gdshader
 res://Scenes/World.tscn
-res://Scripts/Player.gd
-res://Scenes/world.gd
 res://Models/crypt.tscn
 res://Models/fence_2.tscn
+res://steampunk_rifle.tscn
+res://bullet.tscn
+res://bodypart.gd
 res://zombie.gd
+res://bullet.gd
+res://zombie_dead_particles.tscn
+res://zombie_dead_particles.gd
+res://Scenes/world.gd

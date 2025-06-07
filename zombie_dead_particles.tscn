@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://o5ccy3xjn5hu"]
+
+[ext_resource type="Script" uid="uid://1cr273tmfk0e" path="res://zombie_dead_particles.gd" id="1_3ltml"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6fgjq"]
+emission_shape_offset = Vector3(0, 1, 0)
+emission_shape_scale = Vector3(0.5, 1, 0.5)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+direction = Vector3(0, 4.32, 0)
+spread = 15.0
+initial_velocity_min = 3.0
+initial_velocity_max = 4.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -2.23517e-06
+linear_accel_max = 6.9
+scale_min = 0.5
+scale_max = 1.5
+color = Color(0.731033, 0.603848, 0.654886, 1)
+hue_variation_min = -0.64
+hue_variation_max = 0.64
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3ltml"]
+albedo_color = Color(0.22578, 0.385251, 0.336426, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_exfb1"]
+material = SubResource("StandardMaterial3D_3ltml")
+size = Vector3(0.22, 0.2, 0.2)
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_3ltml")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+amount = 50
+explosiveness = 0.7
+trail_lifetime = 3.53
+process_material = SubResource("ParticleProcessMaterial_6fgjq")
+draw_pass_1 = SubResource("BoxMesh_exfb1")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

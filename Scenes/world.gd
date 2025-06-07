@@ -4,11 +4,14 @@ extends Node3D
 @onready var spawns = $Spawns
 @onready var navigation_region = $NavigationRegion3D
 
+
 var zombie = load("res://zombie.tscn")
+var death_particles = load("res://zombie_dead_particles.tscn")
 var instance
 
 func _ready() -> void:
 	randomize()
+	connect("zombie_died", _on_zombie_died)
 
 func _on_player_player_hit() -> void:
 	hit_rect.visible = true
@@ -25,3 +28,8 @@ func _on_timer_timeout() -> void:
 	instance = zombie.instantiate()
 	instance.position = spawn_point
 	navigation_region.add_child(instance)
+
+func _on_zombie_died(pos):
+	var particle_spawn = death_particles.instantiate()
+	particle_spawn.position = pos
+	add_child(particle_spawn)

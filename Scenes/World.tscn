@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://db2h3t17k37pe"]
+[gd_scene load_steps=23 format=4 uid="uid://db2h3t17k37pe"]
 
 [ext_resource type="Script" uid="uid://d1s13ybge20ij" path="res://Scripts/Player.gd" id="1_1d73w"]
 [ext_resource type="Script" uid="uid://c36knfpj4xjge" path="res://Scenes/world.gd" id="1_kn06e"]
@@ -8,6 +8,7 @@
 [ext_resource type="Shader" uid="uid://bi3o8elbtqoni" path="res://addons/simplegrasstextured/shaders/grass.gdshader" id="4_q2d71"]
 [ext_resource type="PackedScene" uid="uid://dlgq007dj4co2" path="res://Models/fence_2.tscn" id="5_p70al"]
 [ext_resource type="Texture2D" uid="uid://c4ggdp0kg5wjk" path="res://addons/simplegrasstextured/textures/grassbushcc008.png" id="5_uo7di"]
+[ext_resource type="PackedScene" uid="uid://cshakm3philht" path="res://steampunk_rifle.tscn" id="6_7yo87"]
 [ext_resource type="Script" uid="uid://2juaclm8gc1n" path="res://addons/simplegrasstextured/grass.gd" id="6_kn06e"]
 [ext_resource type="PackedScene" uid="uid://b8chigdgttrgf" path="res://zombie.tscn" id="9_uo7di"]
 
@@ -132,6 +133,7 @@ script = ExtResource("1_1d73w")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.09739, 0)
+cast_shadow = 0
 mesh = SubResource("CapsuleMesh_xc2g5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
@@ -142,6 +144,12 @@ shape = SubResource("CapsuleShape3D_wydro")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.67939, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Player/Head"]
+
+[node name="Steampunk Rifle" parent="Player/Head/Camera3D" instance=ExtResource("6_7yo87")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.261646, -0.323571, -0.674943)
+
+[node name="RayCast3D" parent="Player/Head/Camera3D/Steampunk Rifle" index="2"]
+collision_mask = 2
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -105.626, 81.4032, 113.583)
@@ -331,7 +339,10 @@ offset_bottom = 888.0
 color = Color(1, 0, 0, 0.305882)
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
 autostart = true
 
 [connection signal="player_hit" from="Player" to="." method="_on_player_player_hit"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+
+[editable path="Player/Head/Camera3D/Steampunk Rifle"]

@@ -2,22 +2,38 @@ extends CharacterBody3D
 
 #var player = null
 var state_machine
+var health = 6
+
+signal zombie_died
 
 const SPEED = 4.0
 const ATTACK_RANGE = 2.5
+const ATTACK_COOLDOWN = 1.0
 
 @onready var player = $"../../Player"
+@onready var world_path = $"../.."
 
 @onready var nav_agent : NavigationAgent3D = $NavigationAgent3D
 @onready var anim_tree : AnimationTree = $AnimationTree
+@onready var attack_cooldown_timer = $AttackCooldownTimer
+
+var can_attack = true
 
 func _ready():
 	#player = get_node(player_path)
 	state_machine = anim_tree.get("parameters/playback")
-	
+	attack_cooldown_timer.wait_time = ATTACK_COOLDOWN
+	attack_cooldown_timer.one_shot = true # Ensure it's a one-shot timer
+	attack_cooldown_timer.autostart = false # Don't start automatically
+
+	# Connect the timer's timeout signal
+	attack_cooldown_timer.connect("timeout", _on_attack_cooldown_timer_timeout)
+	zombie_died.connect(world_path._on_zombie_died)
 	
 func _process(delta):
 	velocity = Vector3.ZERO
+	
+	var target_in_range = _target_in_range()
 	
 	match state_machine.get_current_node():
 		"run":
@@ -29,9 +45,9 @@ func _process(delta):
 		"attack":
 			look_at(Vector3(player.global_position.x, global_position.y, player.global_position.z), Vector3.UP)
 			
-	
-	anim_tree.set("parameters/conditions/attacking", _target_in_range())
-	anim_tree.set("parameters/conditions/running", !_target_in_range())
+	var should_attack = target_in_range and can_attack
+	anim_tree.set("parameters/conditions/attacking", should_attack)
+	anim_tree.set("parameters/conditions/running", !should_attack)
 	
 	
 	
@@ -43,5 +59,18 @@ func _target_in_range():
 
 func _hit_finished():
 	if global_position.distance_to(player.global_position) < ATTACK_RANGE + 1.0:
+		can_attack = false
+		attack_cooldown_timer.start()
 		var dir = global_position.direction_to(player.global_position)
 		player.hit(dir)
+
+func _on_attack_cooldown_timer_timeout():
+	can_attack = true
+
+
+func _on_area_3d_body_part_hit(dmg) -> void:
+	print("hit")
+	health -= dmg
+	if health <= 0:
+		emit_signal("zombie_died", position)
+		queue_free()

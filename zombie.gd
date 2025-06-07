@@ -69,7 +69,6 @@ func _on_attack_cooldown_timer_timeout():
 
 
 func _on_area_3d_body_part_hit(dmg) -> void:
-	print("hit")
 	health -= dmg
 	if health <= 0:
 		emit_signal("zombie_died", position)

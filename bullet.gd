@@ -15,9 +15,7 @@ func _process(delta: float) -> void:
 		mesh_instance_3d.visible = false
 		particles.emitting = true
 		ray_cast_3d.enabled = false 
-		print("collided with anything")
 		if ray_cast_3d.get_collider().is_in_group("enemy"):
-			print("collided")
 			ray_cast_3d.get_collider().hit()
 		await get_tree().create_timer(1.0).timeout
 		queue_free()

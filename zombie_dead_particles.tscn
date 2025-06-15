@@ -1,6 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://o5ccy3xjn5hu"]
+[gd_scene load_steps=7 format=3 uid="uid://o5ccy3xjn5hu"]
 
 [ext_resource type="Script" uid="uid://1cr273tmfk0e" path="res://zombie_dead_particles.gd" id="1_3ltml"]
+
+[sub_resource type="Curve" id="Curve_3ltml"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_exfb1"]
+curve = SubResource("Curve_3ltml")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6fgjq"]
 emission_shape_offset = Vector3(0, 1, 0)
@@ -14,8 +21,9 @@ initial_velocity_max = 4.0
 gravity = Vector3(0, 0, 0)
 linear_accel_min = -2.23517e-06
 linear_accel_max = 6.9
-scale_min = 0.5
+scale_min = 0.1
 scale_max = 1.5
+scale_curve = SubResource("CurveTexture_exfb1")
 color = Color(0.731033, 0.603848, 0.654886, 1)
 hue_variation_min = -0.64
 hue_variation_max = 0.64

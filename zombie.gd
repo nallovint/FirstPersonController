@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 #var player = null
 var state_machine
-var health = 6
+var health = 10
 
 signal zombie_died
 signal zombie_hit

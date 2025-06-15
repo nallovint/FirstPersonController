@@ -16,6 +16,14 @@ var t_bob = 0.0
 const BASE_FOV = 75.0
 const FOV_CHANGE = 1.5
 
+enum weapons {
+	AUTO,
+	PISTOL
+}
+var weapon = weapons.AUTO
+@onready var weapon_switching = $Head/Camera3D/AnimationPlayer
+var can_shoot: bool = true
+
 signal player_hit
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -84,8 +92,19 @@ func _physics_process(delta):
 	var target_fov = BASE_FOV + FOV_CHANGE * velocity_clamped
 	camera.fov = lerp(camera.fov, target_fov, delta * 8.0)
 	
-	if Input.is_action_pressed("shoot"):
-		_shoot_auto()
+	if Input.is_action_pressed("shoot") and can_shoot:
+		match weapon:
+			weapons.AUTO:
+				_shoot_auto()
+			weapons.PISTOL:
+				_shoot_pistols()
+	
+	if Input.is_action_just_pressed("weapon1") and weapon != weapons.AUTO:
+		_raise_weapon(weapons.AUTO)
+	if Input.is_action_just_pressed("weapon2") and weapon != weapons.PISTOL:
+		_raise_weapon(weapons.PISTOL)
+		
+		
 	
 	move_and_slide()
 
@@ -105,8 +124,11 @@ func _shoot_pistols():
 		gun_anim.play("shoot")
 		instance = bullet.instantiate()
 		instance.transform = gun_barrel.global_transform
-		#instance.transform_basis = gun_barrel.global_transform.basis
 		get_parent().add_child(instance)
+		if aim_ray.is_colliding():
+			instance.set_velocity(aim_ray.get_collision_point())
+		else:
+			instance.set_velocity(aim_ray_end.global_position)
 
 func _shoot_auto():
 	if !auto_anim.is_playing():
@@ -114,8 +136,33 @@ func _shoot_auto():
 		instance = bullet_trace.instantiate()
 		if aim_ray.is_colliding():
 			instance.init(auto_barrel.global_position, aim_ray.get_collision_point())
+			get_parent().add_child(instance)
 			if aim_ray.get_collider().is_in_group("enemy"):
 				aim_ray.get_collider().hit()
+				instance.trigger_particles(aim_ray.get_collision_point(),
+											auto_barrel.global_position, true)
+			else:
+				instance.trigger_particles(aim_ray.get_collision_point(),
+											auto_barrel.global_position, false)
 		else:
 			instance.init(auto_barrel.global_position, aim_ray_end.global_position)
-		get_parent().add_child(instance)
+		#get_parent().add_child(instance)
+
+func _lower_weapon():
+	match weapon:
+		weapons.AUTO:
+			weapon_switching.play("lower_auto")
+		weapons.PISTOL:
+			weapon_switching.play("lower_pistol")
+
+func _raise_weapon(new_weapon):
+	can_shoot = false
+	_lower_weapon()
+	await get_tree().create_timer(0.3).timeout
+	match new_weapon:
+		weapons.AUTO:
+			weapon_switching.play_backwards("lower_auto")
+		weapons.PISTOL:
+			weapon_switching.play_backwards("lower_pistol")
+	weapon = new_weapon
+	can_shoot = true

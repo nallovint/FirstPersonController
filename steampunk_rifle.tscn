@@ -328,6 +328,7 @@ _data = {
 }
 
 [node name="Steampunk Rifle" type="Node3D"]
+visible = false
 
 [node name="Node" type="MeshInstance3D" parent="."]
 cast_shadow = 0

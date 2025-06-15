@@ -2,6 +2,9 @@ extends MeshInstance3D
 
 var alpha = 1.0
 
+@onready var blood = $Blood
+@onready var terrain = $Brown
+
 func _ready() -> void:
 	var dup_mat = material_override.duplicate()
 	material_override = dup_mat
@@ -20,3 +23,13 @@ func _process(delta: float) -> void:
 
 func _on_timer_timeout() -> void:
 	queue_free()
+
+func trigger_particles(pos, gun_pos, on_enemy):
+	if on_enemy:
+		blood.position = pos
+		blood.look_at(gun_pos)
+		blood.emitting = true
+	else:
+		terrain.position = pos
+		terrain.look_at(gun_pos)
+		terrain.emitting = true
